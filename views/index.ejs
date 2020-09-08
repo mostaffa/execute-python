@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap-slider.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <!-- Socket.io -->
+  <script src="/socket.io/socket.io.js"></script>
+  
+  <!-- code -->
+  <link rel="stylesheet" href="/editor/lib/codemirror.css">
+  <link rel="stylesheet" href="/editor/theme/darcula.css">
+  <style>
+    .CodeMirror {border: 1px solid black; font-size:13px}
+  </style>
+  </head>
+  <body>
+    <div class="">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Execute Python</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+              </ul>
+            </div>
+      </nav>
+    </div>
+    
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="">
+        <div class="form-group">
+          <textarea name="code" id="code"><%= script%></textarea>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" id="save" class="btn btn-success">Save <span
+              id="save_loader" class="spinner-border spinner-border-sm disconnect_loader" style="display: none" role="status"
+              aria-hidden="true"></span></button>
+            <button type="submit" id="run" class="btn btn-success">Execute</button>
+            <button type="submit" id="kill" class="btn btn-danger" disabled>Kill</button>
+          </div>
+        </div>
+        
+      </form>
+        </div>
+        <div class="col-md-12">
+          <form action="">
+            <div class="form-group row">
+              <textarea name="log" id="log" ></textarea>
+            </div>
+            <div class="form-group row">
+              <button type="submit" id="save_log" class="btn btn-success" >Save Log</button>  
+              <button type="submit" id="clear_log" class="btn btn-danger" >Clear Log</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="/bootstrap-4.3.1-dist/js/bootstrap-slider.min.js"></script>
+    <script src="/editor/lib/codemirror.js"></script>
+    <script src="/editor/mode/python/python.js"></script>
+    <script src="/editor/addone/selection/active-line.js"></script>
+    <script src="/editor/addone/edit/matchbrackets.js"></script>
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>
